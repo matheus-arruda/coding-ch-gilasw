@@ -1,0 +1,14 @@
+org\digitalit\notification\handler\GlobalExceptionHandlerTest.class
+org\digitalit\notification\strategy\NotificationStrategyFactoryTest.class
+org\digitalit\notification\config\DbSeedConfigTest.class
+org\digitalit\notification\config\SwaggerConfigTest.class
+org\digitalit\notification\controller\NotificationControllerTest.class
+org\digitalit\notification\strategy\EmailNotificationTest.class
+org\digitalit\notification\controller\LogControllerTest.class
+org\digitalit\notification\service\LogServiceTest.class
+org\digitalit\notification\service\CategoryServiceTest.class
+org\digitalit\notification\strategy\PushNotificationTest.class
+org\digitalit\notification\controller\CategoryControllerTest.class
+org\digitalit\notification\strategy\SmsNotificationTest.class
+org\digitalit\notification\NotificationApplicationTests.class
+org\digitalit\notification\service\NotificationServiceTest.class

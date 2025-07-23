@@ -75,6 +75,15 @@ cd coding-ch-gilasw
 ./mvnw test
 ```
 
+## Docker
+
+```bash 
+-> docker build -t notification-app .
+
+-> docker run -p 8080:8080 notification-app
+```
+
+
 ## Architecture (Mermaid)
 
 ```mermaid
