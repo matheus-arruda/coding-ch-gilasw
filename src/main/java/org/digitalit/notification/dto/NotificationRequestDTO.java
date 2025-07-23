@@ -17,5 +17,6 @@ public class NotificationRequestDTO {
   @NotBlank(message = "Message is required")
   @Size(min = 3, max = 100, message = "Message must be between 3 and 100 characters")
   private String message;
+
   private long userId;
 }

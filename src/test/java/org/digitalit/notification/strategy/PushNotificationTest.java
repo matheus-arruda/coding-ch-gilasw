@@ -9,26 +9,23 @@ import org.junit.jupiter.api.Test;
 
 public class PushNotificationTest {
 
-    private PushNotification pushNotification;
+  private PushNotification pushNotification;
 
-    @BeforeEach
-    void setUp() {
-        pushNotification = new PushNotification();
-    }
+  @BeforeEach
+  void setUp() {
+    pushNotification = new PushNotification();
+  }
 
-    @Test
-    void shouldReturnPushChannel() {
-        assertEquals(NotificationChannel.PUSH, pushNotification.getChannel());
-    }
+  @Test
+  void shouldReturnPushChannel() {
+    assertEquals(NotificationChannel.PUSH, pushNotification.getChannel());
+  }
 
-    @Test
-    void shouldSendNotificationWithoutErrors() {
-        UserEntity user = UserEntity.builder()
-                .email("test@example.com")
-                .name("Test User")
-                .build();
+  @Test
+  void shouldSendNotificationWithoutErrors() {
+    UserEntity user = UserEntity.builder().email("test@example.com").name("Test User").build();
 
-        // Só garantimos que o método roda sem lançar exceção
-        pushNotification.send(user, "Hello World!", "SPORTS");
-    }
+    // Só garantimos que o método roda sem lançar exceção
+    pushNotification.send(user, "Hello World!", "SPORTS");
+  }
 }

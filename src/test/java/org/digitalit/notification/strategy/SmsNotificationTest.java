@@ -9,25 +9,22 @@ import org.junit.jupiter.api.Test;
 
 public class SmsNotificationTest {
 
-    private SmsNotification smsNotification;
+  private SmsNotification smsNotification;
 
-    @BeforeEach
-    void setUp() {
-        smsNotification = new SmsNotification();
-    }
+  @BeforeEach
+  void setUp() {
+    smsNotification = new SmsNotification();
+  }
 
-    @Test
-    void shouldReturnSmsChannel() {
-        assertEquals(NotificationChannel.SMS, smsNotification.getChannel());
-    }
+  @Test
+  void shouldReturnSmsChannel() {
+    assertEquals(NotificationChannel.SMS, smsNotification.getChannel());
+  }
 
-    @Test
-    void shouldSendNotificationWithoutErrors() {
-        UserEntity user = UserEntity.builder()
-                .email("test@example.com")
-                .name("Test User")
-                .build();
+  @Test
+  void shouldSendNotificationWithoutErrors() {
+    UserEntity user = UserEntity.builder().email("test@example.com").name("Test User").build();
 
-        smsNotification.send(user, "This is a test SMS", "FINANCE");
-    }
+    smsNotification.send(user, "This is a test SMS", "FINANCE");
+  }
 }
