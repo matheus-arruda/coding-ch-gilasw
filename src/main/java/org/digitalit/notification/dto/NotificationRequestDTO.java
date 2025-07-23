@@ -1,8 +1,15 @@
 package org.digitalit.notification.dto;
 
-import org.digitalit.notification.entity.enums.Category;
+import lombok.*;
 
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class NotificationRequestDTO {
-    private Category category;
-    private String message;
+  private String message;
+  private String category;
+  private long userId;
 }

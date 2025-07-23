@@ -1,13 +1,11 @@
 package org.digitalit.notification;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class NotificationApplicationTests {
+public class NotificationApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
-
+  @Test
+  void contextLoads() {
+    NotificationApplication.main(new String[] {});
+  }
 }
