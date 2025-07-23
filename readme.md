@@ -55,9 +55,10 @@ cd coding-ch-gilasw
 
 ## API Endpoints
 | Method | Endpoint         | Description                          |
-| ------ | ---------------- | ------------------------------------ |
+| ------ |------------------|--------------------------------------|
 | POST   | `/notifications` | Sends a message to subscribed users  |
 | GET    | `/logs`          | Retrieves all sent notification logs |
+| GET    | `/categories`    | Retrieves all categories             |
 
 ## Code Formatting
 - Apply
