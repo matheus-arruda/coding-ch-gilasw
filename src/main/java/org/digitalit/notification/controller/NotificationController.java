@@ -1,5 +1,6 @@
 package org.digitalit.notification.controller;
 
+import jakarta.validation.Valid;
 import org.digitalit.notification.dto.NotificationRequestDTO;
 import org.digitalit.notification.service.NotificationService;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ public class NotificationController {
   }
 
   @PostMapping
-  public void send(@RequestBody NotificationRequestDTO dto) {
+  public void send(@RequestBody @Valid NotificationRequestDTO dto) {
     service.sendNotification(dto);
   }
 }

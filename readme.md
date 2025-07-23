@@ -79,37 +79,62 @@ cd coding-ch-gilasw
 ```mermaid
 graph TD
   subgraph Controller
-    A1[NotificationController]
-    A2[LogController]
-    A3[CategoryController]
+    NotificationController
   end
 
   subgraph Service
-    B1[NotificationService]
-    B2[LogService]
-    B3[CategoryService]
+    NotificationService
+    LogService
   end
 
   subgraph Strategy
-    C1[EmailNotification]
-    C2[SmsNotification]
-    C3[PushNotification]
-    C4[NotificationStrategyFactory]
+    NotificationStrategyFactory
+    EmailNotification
+    SmsNotification
+    PushNotification
+  end
+
+  subgraph DTO
+    NotificationRequestDTO
+  end
+
+  subgraph Entity
+    NotificationEntity
+    UserEntity
   end
 
   subgraph Repository
-    D1[NotificationLogRepository]
-    D2[CategoryRepository]
-    D3[UserRepository]
+    NotificationRepository
+    UserRepository
   end
 
-  A1 --> B1
-  A2 --> B2
-  A3 --> B3
-  B1 --> C4
-  C4 --> C1
-  C4 --> C2
-  C4 --> C3
-  B1 --> D1
-  B2 --> D1
-  B3 --> D2
+  subgraph Config
+    WebConfig
+  end
+
+  subgraph Handler
+    GlobalExceptionHandler
+  end
+
+  NotificationController -->|POST /notifications| NotificationService
+  NotificationService --> NotificationStrategyFactory
+  NotificationService --> NotificationRepository
+  NotificationService --> LogService
+  NotificationService --> UserRepository
+
+  NotificationStrategyFactory --> EmailNotification
+  NotificationStrategyFactory --> SmsNotification
+  NotificationStrategyFactory --> PushNotification
+
+  NotificationController --> NotificationRequestDTO
+  NotificationRequestDTO -->|Validated| GlobalExceptionHandler
+
+  NotificationService --> NotificationEntity
+  NotificationEntity --> NotificationRepository
+
+  NotificationService --> UserEntity
+  UserEntity --> UserRepository
+
+  WebConfig --> NotificationController
+  GlobalExceptionHandler -->|Catches| NotificationController
+

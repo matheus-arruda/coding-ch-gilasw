@@ -26,7 +26,7 @@ public class NotificationLogEntity {
   @Column(nullable = false, length = 20)
   private String channel;
 
-  @Column(nullable = false, length = 500)
+  @Column(nullable = false, length = 100)
   private String message;
 
   @Column(nullable = false, length = 50)
